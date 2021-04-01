@@ -1,0 +1,32 @@
+﻿@model List<BancoBari.Core.Messages.Message>
+@{ ViewData["Title"] = "Envio"; }
+<script>function timedRefresh(timeoutPeriod) {
+        setTimeout("location.reload(true);", timeoutPeriod);
+    }
+
+    window.onload = timedRefresh(5000);</script>
+
+<div class="text-center">
+    <h1 class="display-4">Sender</h1>
+</div>
+
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>ServiceId</th>
+            <th>Messsage</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>@item.Id</td>
+    <td>@item.ServiceId </td>
+    <td>@item.MessageText</td>
+    <td>@item.Date</td>
+</tr>}
+    </tbody>
+</table>*@
