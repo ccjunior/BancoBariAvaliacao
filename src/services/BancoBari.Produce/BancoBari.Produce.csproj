@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\building blocks\MessageBus\BancoBari.MessageBus\BancoBari.MessageBus.csproj" />
+    <ProjectReference Include="..\..\building blocks\MessageBus\BancoBari.MessageBus\BancoBari.MessageBus.csproj" />
   </ItemGroup>
 
 

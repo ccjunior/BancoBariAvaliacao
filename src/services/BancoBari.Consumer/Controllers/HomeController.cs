@@ -20,21 +20,12 @@ namespace BancoBari.Consumer.Controllers
 
         public IActionResult Index()
         {
+            _bus.Initialize("localhost", "BariQuee");
+            _bus.Receive();
 
-            try
-            {
-                _bus.Initialize("localhost", "BariQuee");
-                _bus.Receive();
-            }
-            catch (System.Exception ex)
-            {
-
-                throw ex;
-            }
-           
-             var result = new List<Message>();
-             result = MessageList.GetMessages().OrderByDescending(x => x.Date).ToList();
-            return View(null);
+            var result = new List<Message>();
+            result = MessageList.GetMessages().OrderByDescending(x => x.Date).ToList();
+            return View(result);
         }
     }
 }

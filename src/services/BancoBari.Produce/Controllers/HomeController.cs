@@ -21,16 +21,13 @@ namespace BancoBari.Produce.Controllers
 
         public IActionResult Index()
         {
-            
 
             Message message = new Message(Guid.NewGuid(), "Hello World!");
             _bus.Initialize("localhost", "BariQuee");
             _bus.Send(message);
 
-            //var result = new List<Message>();
-            //result = MessageList.GetMessages().OrderByDescending(x => x.Date).ToList();
-
             return View(null);
+
         }
     }
 }

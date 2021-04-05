@@ -7,10 +7,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["src/services/BancoBari.Consumer/BancoBari.Consumer.csproj", "src/services/BancoBari.Consumer/"]
+COPY ["BancoBari.Consumer.csproj", "src/services/BancoBari.Consumer/"]
 RUN dotnet restore "src/services/BancoBari.Consumer/BancoBari.Consumer.csproj"
 COPY . .
-WORKDIR "/src/src/services/BancoBari.Consumer"
+WORKDIR "/src/services/BancoBari.Consumer"
 RUN dotnet build "BancoBari.Consumer.csproj" -c Release -o /app/build
 
 FROM build AS publish

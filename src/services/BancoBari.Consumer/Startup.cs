@@ -23,7 +23,7 @@ namespace BancoBari.Consumer
             //services.AddHostedService<BackgroundServices>();
             services.AddScoped<IBus, Bus>();
            
-            services.AddControllers();
+            services.AddMvc();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
